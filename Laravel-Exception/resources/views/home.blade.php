@@ -14,7 +14,15 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('You are logged in') }} as
+                    <span>
+                        <a
+                            style="text-decoration: none"
+                            href="/user/{{ Auth::user()->id }}">
+                            {{ Auth::user()->name}}
+                        </a>
+                    </span>
+
                 </div>
             </div>
         </div>
