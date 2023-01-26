@@ -10,7 +10,7 @@
                     Transactions
                 </div>
                 <div class="card-body">
-                    <a href="/purchase/create" style="text-decoration: none" class="btn btn-link">Create New Transaction</a>
+                    <a href="/purchase" style="text-decoration: none" class="btn btn-link">Create New Transaction</a>
                     <hr>
                     <br>
 

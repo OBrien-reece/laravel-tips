@@ -10,15 +10,22 @@
                         New Transaction
                     </div>
                     <div class="card-body">
-                        <form action="">
-                            <div class="form-group">
+                        <form action="/purchase" method="POST">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+
+                            <div class="form-group mt-2 mb-2">
                                 <label for="Amount">Amount</label>
-                                <input type="number" class="form-control" name="ammount">
+                                <input required type="number" class="form-control" name="ammount">
                             </div>
-                            <div class="form-group">
+
+                            <div class="form-group mt-2 mb-2">
                                 <label for="Shopping Item">Shopping Item</label>
-                                <input type="number" class="form-control" name="description">
+                                <input required type="text" class="form-control" name="description">
                             </div>
+
+                            <br>
+                            <button class="btn btn-success btn-block">Make Purchase</button>
                         </form>
                     </div>
 

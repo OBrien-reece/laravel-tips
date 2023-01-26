@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaction;
+use App\Models\Account;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
@@ -14,7 +15,7 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //
+        return view('purchase.purchase');
     }
 
     /**
@@ -24,7 +25,7 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        return view('purchase.purchase');
+
     }
 
     /**
@@ -35,7 +36,13 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $uid = $request->input('user_id');
+        try {
+            $account = Account::find('user_id', $uid)->first()
+        }catch (\Exception $exception) {
+            dd()
+        };
+
     }
 
     /**

@@ -22,8 +22,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('/purchase', TransactionController::class);
+Route::resource('/purchase', 'App\Http\Controllers\TransactionController', ['except' => 'index']);
 
 Route::middleware('auth')->group(function () {
-    Route::resource('/purchase/purchase', [TransactionController::class, 'create']);
+    Route::get('/purchase', [TransactionController::class, 'index']);
 });
