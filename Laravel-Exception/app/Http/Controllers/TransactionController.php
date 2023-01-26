@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Transaction;
 use App\Models\Account;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
@@ -36,12 +37,30 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        $uid = $request->input('user_id');
-        try {
-            $account = Account::find('user_id', $uid)->first()
-        }catch (\Exception $exception) {
-            dd()
-        };
+
+        $account = Account::where('user_id', $request->input('user_id'))->first();
+
+        if(!$account) {
+            return back()->withErrors(['account' => 'Account not found']);
+        }
+
+        $transactionAmount = $request->input('ammount') * 200;
+
+
+        \DB::transaction(function () use($account, $transactionAmount, $request) {
+            Transaction::create([
+                'account_id' => $account->id,
+                'ammount' => $transactionAmount,
+                'description' => $request->input('description')
+            ]);
+
+            $account->balance = $account->balance - $transactionAmount;
+            $account->save();
+        });
+
+
+        return redirect('/home');
+
 
     }
 

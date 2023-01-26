@@ -41,4 +41,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function transaction() {
+       return $this->hasManyThrough(Transaction::class, Account::class, 'user_id', 'account_id');
+    }
 }

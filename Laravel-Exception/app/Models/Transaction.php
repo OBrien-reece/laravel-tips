@@ -13,5 +13,5 @@ class Transaction extends Model
 
     public $timestamps = true;
 
-    protected $fillable = ['account_id', 'description', 'created_at', 'updated_at'];
+    protected $fillable = ['account_id','ammount', 'description', 'created_at', 'updated_at'];
 }

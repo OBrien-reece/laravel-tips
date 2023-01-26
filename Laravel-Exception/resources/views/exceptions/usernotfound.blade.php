@@ -5,12 +5,6 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
 
-                @if($errors->any())
-                    <span class="text-danger">
-                        {{ implode(' ', $errors->all(':message')) }}
-                    </span>
-                @endif
-
                 <div class="card">
                     <div class="card-header bg-dark text-white">
                         New Transaction
@@ -35,7 +29,7 @@
                         </form>
                     </div>
 
+                </div>
             </div>
         </div>
-    </div>
 @endsection

@@ -22,13 +22,19 @@
                             <th scope="col">Shopped Item</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        </tbody>
+
+                        @forelse($user->transaction as $transaction)
+                            <tbody>
+                            <tr>
+                                <td>{{ $transaction->created_at }}</td>
+                                <td>{{ $transaction->ammount }}</td>
+                                <td>{{$transaction->description}}</td>
+                            </tr>
+                            </tbody>
+                        @empty
+                            <span>No Items to show at the moment</span>
+                        @endforelse
+
                     </table>
                 </div>
             </div>
