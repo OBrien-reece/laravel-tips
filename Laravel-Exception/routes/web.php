@@ -24,6 +24,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('/purchase', TransactionController::class);
 
-Route::withm('auth')->group(function () {
-
+Route::middleware('auth')->group(function () {
+    Route::resource('/purchase/purchase', [TransactionController::class, 'create']);
 });
