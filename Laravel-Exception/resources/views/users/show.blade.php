@@ -17,6 +17,12 @@
                             </small>
                         </ul>
                     </div>
+                    <div class="card-header bg-dark text-white">
+                        <span>
+                            Now try changing the ID on the URL to a random ID e.g
+                            <code>http://127.0.0.1:8000/user/59</code>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>

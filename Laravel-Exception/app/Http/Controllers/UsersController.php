@@ -48,18 +48,14 @@ class UsersController extends Controller
     public function show($id)
     {
         try {
-
             $user = User::where('id', $id)->firstOrFail();
-
-        }catch (ModelNotFoundException $exception) {
-            /*dd($exception->getMessage());*/
-            /*dd(get_class($exception));*/
+        }catch (ModelNotFoundException $e) {
+//            dd(get_class($e));
+            /*dd($e->getMessage());*/
             return view('users.usernotfound');
         }
 
-        return view('users.show', [
-            'user' => $user
-        ]);
+        return view('users.show', ['user' => $user]);
     }
 
     /**
