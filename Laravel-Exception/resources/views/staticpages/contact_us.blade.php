@@ -13,7 +13,13 @@
                         This is the generated contact us page of StaticPages Controllers
                     </p>
                     <hr class="my-4">
-                    <p>There are better ways to apply static pages that using multiple routes. View source code</p>
+                    <p>There are better ways to apply static pages that using multiple routes.
+                        <a
+                            style="text-decoration: none"
+                            href="https://github.com/OBrien-reece/laravel-tips/tree/static_pages">
+                            View source code
+                        </a>
+                    </p>
 
                 </div>
             </div>
