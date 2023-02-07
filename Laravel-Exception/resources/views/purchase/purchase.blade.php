@@ -2,14 +2,20 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
 
-                @if($errors->any())
+        @if($errors->any())
+            <div class="row">
+                <div class="col-md-6 m-auto">
                     <span class="text-danger">
                         {{ implode(' ', $errors->all(':message')) }}
                     </span>
-                @endif
+                    <a href="/create_account" style="float: right;text-decoration: none">Create Account</a>
+                </div>
+            </div>
+        @endif
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
 
                 <div class="card">
                     <div class="card-header bg-dark text-white">
