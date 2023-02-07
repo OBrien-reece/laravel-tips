@@ -8,10 +8,12 @@
         <div class="row">
             <div class="m-auto col-md-9 mt-4">
                 <div class="jumbotron">
-                    <x-header title="Terms & Conditions StaticPages!"/>
-                    <p class="lead">
-                        This is the generated terms page of StaticPages Controllers
-                    </p>
+                    <x-header title="Terms & Conditions StaticPages!" class="text-danger">
+                        <p class="lead">
+                            This is the generated terms page of StaticPages Controllers
+                        </p>
+                    </x-header>
+
                     <hr class="my-4">
                     <p>There are better ways to apply static pages that using multiple routes.
                         <a

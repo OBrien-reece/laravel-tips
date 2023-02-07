@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Make Purchase')
+
 @section('content')
     <div class="container">
 
@@ -28,16 +30,20 @@
 
                             <div class="form-group mt-2 mb-2">
                                 <label for="Amount">Amount</label>
-                                <input required type="number" class="form-control" name="ammount">
+                                <x-form.input-field name="amount" type="number" placeholder="e.g 30" />
                             </div>
 
                             <div class="form-group mt-2 mb-2">
                                 <label for="Shopping Item">Shopping Item</label>
-                                <input required type="text" class="form-control" name="description">
+                                <x-form.input-field name="description" placeholder="e.g Baking soda" />
                             </div>
 
                             <br>
-                            <button class="btn btn-success btn-block">Make Purchase</button>
+
+                            <x-form.primary-button>
+                                Make Purchase
+                            </x-form.primary-button>
+
                         </form>
                     </div>
 
