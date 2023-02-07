@@ -24,13 +24,7 @@
                         </thead>
 
                         @forelse($user->transaction as $transaction)
-                            <tbody>
-                            <tr>
-                                <td>{{ $transaction->created_at }}</td>
-                                <td>{{ $transaction->ammount }}</td>
-                                <td>{{$transaction->description}}</td>
-                            </tr>
-                            </tbody>
+                           <x-transaction.transaction-item :transaction="$transaction" />
                         @empty
                             <span>No Items to show at the moment</span>
                         @endforelse
@@ -43,3 +37,5 @@
     </div>
 </div>
 @endsection
+
+
