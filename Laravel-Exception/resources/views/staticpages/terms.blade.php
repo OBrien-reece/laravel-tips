@@ -8,7 +8,7 @@
         <div class="row">
             <div class="m-auto col-md-9 mt-4">
                 <div class="jumbotron">
-                    <h1 class="display-4">Terms StaticPages!</h1>
+                    <x-header title="Terms & Conditions StaticPages!"/>
                     <p class="lead">
                         This is the generated terms page of StaticPages Controllers
                     </p>

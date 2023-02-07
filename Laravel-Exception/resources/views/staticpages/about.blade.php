@@ -8,7 +8,7 @@
         <div class="row">
             <div class="m-auto col-md-9 mt-4">
                 <div class="jumbotron">
-                    <h1 class="display-4">About StaticPages!</h1>
+                    <x-header title="About Us StaticPages!"/>
                     <p class="lead">
                         This is the generated about page of StaticPages Controllers
                     </p>

@@ -8,7 +8,7 @@
         <div class="row">
             <div class="m-auto col-md-9 mt-4">
                 <div class="jumbotron">
-                    <h1 class="display-4">Contact Us StaticPages!</h1>
+                    <x-header title="Contact Us StaticPages!"/>
                     <p class="lead">
                         This is the generated contact us page of StaticPages Controllers
                     </p>
