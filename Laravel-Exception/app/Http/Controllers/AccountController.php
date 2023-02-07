@@ -14,7 +14,7 @@ class AccountController extends Controller
      */
     public function index()
     {
-        //
+        return view('account.create_account');
     }
 
     /**
@@ -35,7 +35,12 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Account::create([
+           'user_id' => Auth()->user()->id,
+           'balance' => $request->input('amountAccount')
+        ]);
+
+        return redirect(route('purchase'));
     }
 
     /**

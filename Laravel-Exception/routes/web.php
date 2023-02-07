@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +27,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/purchase', 'App\Http\Controllers\TransactionController', ['except' => 'index']);
 
 Route::middleware('auth')->group(function () {
-    Route::get('/purchase', [TransactionController::class, 'index']);
+    Route::get('/purchase', [TransactionController::class, 'index'])->name('purchase');
+    Route::resource('/create_account', AccountController::class);
 });
 
 /*Refactor the Routes method 2*/
