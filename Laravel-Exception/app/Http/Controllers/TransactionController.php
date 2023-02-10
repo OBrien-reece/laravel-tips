@@ -44,10 +44,8 @@ class TransactionController extends Controller
             return back()->withErrors(['account' => 'Account not found']);
         }
 
-        $transactionAmount = $request->input('ammount') * 200;
-
-
-        \DB::transaction(function () use($account, $transactionAmount, $request) {
+        \DB::transaction(function () use($account, $request) {
+            $transactionAmount = $request->input('ammount') * 200;
             Transaction::create([
                 'account_id' => $account->id,
                 'ammount' => $transactionAmount,
