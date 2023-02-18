@@ -45,7 +45,7 @@ class TransactionController extends Controller
         }
 
         \DB::transaction(function () use($account, $request) {
-            $transactionAmount = $request->input('ammount') * 200;
+            $transactionAmount = $request->input('amount') * 200;
             Transaction::create([
                 'account_id' => $account->id,
                 'ammount' => $transactionAmount,
