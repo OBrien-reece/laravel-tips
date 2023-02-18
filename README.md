@@ -11,4 +11,5 @@ I will document all the branches essentials for easier understanding
 <li>db_transactions - Branch where I tested DB::transaction facade</li>
 <li>static_pages - Branch where I tested how refactor Routes and Controller using __invoke method</li>
 <li>laravel_components - Branch where implemented Laravel Blade components to avoid code dulication</li>
+<li>dbseeds - Branch where I implemented database seeding to automate migrations</li>
 </ol>
