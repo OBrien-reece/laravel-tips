@@ -12,4 +12,5 @@ I will document all the branches essentials for easier understanding
 <li>static_pages - Branch where I tested how refactor Routes and Controller using __invoke method</li>
 <li>laravel_components - Branch where implemented Laravel Blade components to avoid code dulication</li>
 <li>dbseeds - Branch where I implemented database seeding to automate migrations</li>
+<li>search_the_dirty_way - Implements a search bar but does that in the dirty way via the controller</li>
 </ol>
