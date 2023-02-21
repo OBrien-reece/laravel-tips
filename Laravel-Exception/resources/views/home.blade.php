@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Paginate')
+@section('title', 'SearchBar')
 
 @section('content')
 <div class="container">
@@ -13,6 +13,17 @@
                 </div>
                 <div class="card-body">
                     <a href="/purchase" style="text-decoration: none" class="btn btn-link">Create New Transaction</a>
+                    <span style="float: right">
+                        <form action="#" method="GET">
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    name="search"
+                                    class="form-control"
+                                    placeholder="Type amount of transaction">
+                            </div>
+                        </form>
+                    </span>
                     <hr>
                     <br>
 
@@ -25,7 +36,7 @@
                         </tr>
                         </thead>
 
-                        @forelse($user->transaction as $transaction)
+                        @forelse($user as $transaction)
                            <x-transaction.transaction-item :transaction="$transaction" />
                         @empty
                             <span>No Items to show at the moment</span>
