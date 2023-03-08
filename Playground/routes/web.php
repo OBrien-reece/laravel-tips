@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\ {
-    ActorsController
-};
+use App\Http\Controllers\{ActorsController, DirectorController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +23,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('actors', [ActorsController::class, 'index']);
+Route::get('directors', [DirectorController::class, 'index']);
+Route::get('/directors/{directors}', [DirectorController::class, 'show']);
+
