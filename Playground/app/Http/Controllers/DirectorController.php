@@ -10,13 +10,15 @@ class DirectorController extends Controller
 {
     public function index() {
 
+        $this->authorize('is_admin');
+
         $directors = Director::with('movies')->get();
 
-        $directors = $directors->reject(function (Director $director) {
+        $working_directors = $directors->reject(function (Director $director) {
            return $director->working === 0;
         });
 
-        $directors->first()->delete();
+        return view('director.index', compact('directors'));
     }
 
     public function show($id) {

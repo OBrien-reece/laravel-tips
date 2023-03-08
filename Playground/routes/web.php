@@ -23,6 +23,14 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('actors', [ActorsController::class, 'index']);
-Route::get('directors', [DirectorController::class, 'index']);
-Route::get('/directors/{directors}', [DirectorController::class, 'show']);
+
+Route::group([
+    'middleware' => 'auth',
+    'prefix' => 'directors',
+    'as' => 'director.'
+], function () {
+    Route::get('/', [DirectorController::class, 'index'])->name('index');
+    Route::get('{directors}', [DirectorController::class, 'show'])->name('show');
+});
+
 
