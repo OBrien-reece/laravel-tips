@@ -10,17 +10,16 @@ use Illuminate\Database\Eloquent\Model;
 class Actor extends Model
 {
     use HasFactory;
-    use HasUuids;
 
     protected $table ='actors';
 
-    protected $fillable = ['name', 'username'];
+    protected $fillable = ['name', 'project', 'username', 'working'];
 
     protected function username() :Attribute
     {
 
         return Attribute::make(
-          get: null,
+          get: fn($value) => ucwords($value),
           set: fn($value) => strtolower($value)
         );
 
