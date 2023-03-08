@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Director;
 use App\Models\Movie;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DirectorController extends Controller
 {
     public function index() {
 
-        $this->authorize('is_admin');
+        $this->authorize('viewAny', Director::class);
 
         $directors = Director::with('movies')->get();
 

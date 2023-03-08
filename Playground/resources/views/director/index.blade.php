@@ -28,7 +28,9 @@
 
                             @can('is_admin')
                                 <td>
-                                    <button type="submit" class="btn btn-primary">Edit</button>
+                                    @can('update', $director)
+                                        <button type="submit" class="btn btn-primary">Edit</button>
+                                    @endcan
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </td>
                             @endcan
